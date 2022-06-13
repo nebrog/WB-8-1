@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SeventhWeekApp</string>
+    <string name="type_attack">Тип атаки: %s</string>
+    <string name="name">Имя персонажа: %s</string>
+    <string name="agi">Атрибут: Ловкость</string>
+    <string name="intel">Атрибут: Интеллект</string>
+    <string name="str">Атрибут: Сила</string>
+
+
+</resources>
