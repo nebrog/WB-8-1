@@ -1,7 +1,7 @@
-package com.example.seventhweekapppt1.data
+package com.example.wb81.data
 
-import com.example.seventhweekapppt1.data.model.HeroesItem
-import com.example.seventhweekapppt1.ui.Repository
+import com.example.wb81.data.model.HeroesItem
+import com.example.wb81.ui.Repository
 import com.squareup.moshi.JsonAdapter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

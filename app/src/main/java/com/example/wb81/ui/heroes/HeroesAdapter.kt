@@ -1,4 +1,4 @@
-package com.example.seventhweekapppt1.ui.Heroes
+package com.example.wb81.ui.heroes
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,10 +7,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.example.seventhweekapppt1.R
-import com.example.seventhweekapppt1.data.api.DotaAPI.URL_IMG
-import com.example.seventhweekapppt1.data.model.HeroesItem
-import com.example.seventhweekapppt1.ui.Repository
+import com.example.wb81.R
+import com.example.wb81.data.api.DotaAPI.URL_IMG
+import com.example.wb81.data.model.HeroesItem
 
 class HeroesAdapter(
     private val onHeroClickListener: OnHeroClickListener,

@@ -1,12 +1,10 @@
-package com.example.seventhweekapppt1.data.model
+package com.example.wb81.data.model
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import java.io.Serializable
 
 @JsonClass(generateAdapter = true)
-
-
 data class HeroesItem(
     @Json(name = "id")
     val id: Int,

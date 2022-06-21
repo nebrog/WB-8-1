@@ -1,10 +1,15 @@
 <resources>
-    <string name="app_name">SeventhWeekApp</string>
+    <string name="app_name">WB-8-1</string>
     <string name="type_attack">Тип атаки: %s</string>
     <string name="name">Имя персонажа: %s</string>
     <string name="agi">Атрибут: Ловкость</string>
     <string name="intel">Атрибут: Интеллект</string>
     <string name="str">Атрибут: Сила</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_name">Разработчик: Горбенко Владислав</string>
+    <string name="github">Ссылка: https://github.com/nebrog</string>
+    <string name="date">Дата создания: 18.06.2022</string>
 
 
 </resources>
