@@ -8,8 +8,9 @@ import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import ru.gildor.coroutines.okhttp.await
+import javax.inject.Inject
 
-class NetworkRepository(
+class NetworkRepository @Inject constructor(
     private val okHttpClient: OkHttpClient,
     private val adapter: JsonAdapter<Map<String, HeroesItem>>
 ) : Repository {

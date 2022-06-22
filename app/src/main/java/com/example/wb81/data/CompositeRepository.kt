@@ -2,9 +2,10 @@ package com.example.wb81.data
 
 import com.example.wb81.data.model.HeroesItem
 import com.example.wb81.ui.Repository
+import javax.inject.Inject
 
 @ExperimentalStdlibApi
-class CompositeRepository(
+class CompositeRepository @Inject constructor(
     private val networkRepository: NetworkRepository,
     private val fileRepository: FileRepository,
 ) : Repository {

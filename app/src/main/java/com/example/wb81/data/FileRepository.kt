@@ -5,15 +5,18 @@ import android.util.Log
 import com.example.wb81.data.model.HeroesItem
 import com.example.wb81.ui.Repository
 import com.squareup.moshi.JsonAdapter
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
+import javax.inject.Inject
 
 
 @ExperimentalStdlibApi
-class FileRepository(
+class FileRepository @Inject constructor(
+    @ApplicationContext
     private val context: Context,
     private val adapter: JsonAdapter<Map<String, HeroesItem>>
 ) : Repository {

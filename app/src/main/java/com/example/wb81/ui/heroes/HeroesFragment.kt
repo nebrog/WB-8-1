@@ -9,38 +9,31 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.wb81.App
 import com.example.wb81.R
 import com.example.wb81.data.model.HeroesItem
+import com.example.wb81.ui.Repository
 import com.example.wb81.ui.hero.FragmentHero
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import java.io.IOException
+import javax.inject.Inject
 
 @ExperimentalStdlibApi
-
-class HeroesFragment : Fragment(), OnHeroClickListener {
-
+@AndroidEntryPoint
+class HeroesFragment : Fragment(R.layout.fragment_heroes), OnHeroClickListener {
 
     private val adapter = HeroesAdapter(this)
     private val scope = CoroutineScope(Dispatchers.Main)
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-
-
-        return inflater.inflate(R.layout.fragment_heroes, container, false)
-
-    }
+    @Inject
+    lateinit var repository: Repository
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val recycler = view.findViewById<RecyclerView>(R.id.recycler)
-        val repository = (requireContext().applicationContext as App).repository
         recycler.layoutManager = LinearLayoutManager(context)
         recycler.adapter = adapter
         scope.launch {

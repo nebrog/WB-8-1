@@ -6,13 +6,16 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.example.wb81.R
 import com.example.wb81.ui.InfoFragment
+import dagger.hilt.android.AndroidEntryPoint
 
 @ExperimentalStdlibApi
+@AndroidEntryPoint
 class HeroesActivity : AppCompatActivity() {
 
     companion object {
         const val HERO_ARG = "hero"
     }
+
     private val info = InfoFragment()
 
 
@@ -21,19 +24,19 @@ class HeroesActivity : AppCompatActivity() {
         setContentView(R.layout.activity_heroes)
         val fragment = HeroesFragment()
         val transaction = supportFragmentManager.beginTransaction()
-            .add(R.id.fragment_container,fragment,null)
+            .add(R.id.fragment_container, fragment, null)
             .commit()
 
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.main_menu,menu)
+        menuInflater.inflate(R.menu.main_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val transaction = supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container,info,null)
+            .replace(R.id.fragment_container, info, null)
             .addToBackStack(null)
             .commit()
         return super.onOptionsItemSelected(item)

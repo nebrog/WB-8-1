@@ -12,20 +12,13 @@ import com.example.wb81.R
 import com.example.wb81.data.api.DotaAPI
 import com.example.wb81.data.model.HeroesItem
 import com.example.wb81.ui.heroes.HeroesActivity
+import dagger.hilt.android.AndroidEntryPoint
 
 @ExperimentalStdlibApi
-class FragmentHero : Fragment() {
+@AndroidEntryPoint
+class FragmentHero : Fragment(R.layout.fragment_hero) {
 
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-
-        return inflater.inflate(R.layout.fragment_hero, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val heroItem = arguments?.getSerializable(HeroesActivity.HERO_ARG) as HeroesItem
         val img = view.findViewById<ImageView>(R.id.hero_img_fullscreen)
@@ -42,7 +35,5 @@ class FragmentHero : Fragment() {
             attr?.text = getString(R.string.agi)
         }
         attack?.text = getString(R.string.type_attack, heroItem.attackType)
-
-
     }
 }
