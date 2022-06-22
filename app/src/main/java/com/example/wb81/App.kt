@@ -3,7 +3,6 @@ package com.example.wb81
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
-@ExperimentalStdlibApi
 @HiltAndroidApp
 class App : Application() {
 
